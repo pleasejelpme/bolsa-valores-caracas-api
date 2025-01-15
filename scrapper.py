@@ -147,6 +147,6 @@ if __name__ == '__main__':
     os.chdir('json')
     dump_json(filename='stocks', data=stocks)
     dump_json(filename='renta_variable', data=renta_variable)
-    dump_json(filename='stock_details', data=stock_details)
+    dump_json(filename='stocks_details', data=stock_details)
     
     driver.quit()
