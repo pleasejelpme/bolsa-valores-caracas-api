@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 from const import url
+from utils import remove_dots
 import json
 import os
 
@@ -52,10 +53,10 @@ def scrapp_single_items(driver: webdriver.Chrome) -> list:
             table = wait.until(EC.visibility_of_element_located((By.ID, 'detalle-simbolo')))
             stock = {
                 'desc_simbolo': table.find_element(By.ID, 'desc-simbolo').text,
-                'cod_simbolo': table.find_element(By.ID, 'cod-simbolo').text,
+                'cod_simbolo': remove_dots(table.find_element(By.ID, 'cod-simbolo').text),
                 'cod_isin': table.find_element(By.ID, 'cod-isin').text,
                 'acciones_circulacion': table.find_element(By.ID, 'acciones-circulacion').text,
-                'capitalizacion': table.find_element(By.ID, 'capitalizacion').text,
+                'capitalizacion_en_mill': table.find_element(By.ID, 'capitalizacion').text,
                 'moneda': table.find_element(By.ID, 'moneda').text,
                 'estado': table.find_element(By.ID, 'estado').text,
                 'ultimo_precio': table.find_element(By.ID, 'precio').text,
@@ -110,7 +111,7 @@ def get_renta_variable(soup: BeautifulSoup) -> list:
 
     data = []
     cleaned_data = []
-    keys = ['operaciones', 'titulos_negociados', 'monto_en_efectivo_bs', 'hora_24']
+    keys = ['operaciones', 'titulos_negociados', 'monto_en_efectivo_bs', 'hora']
 
     table_renta_variable = soup.find(id='tbody-rentavariable')
     renta_variable = table_renta_variable.find_all('td')
