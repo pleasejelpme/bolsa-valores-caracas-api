@@ -1,6 +1,6 @@
 [
     {
-        "nombre": "BCO. CARIBE \"A\"",
+        "nombre": "BCO. CARIBE A",
         "simbolo": "ABC.A",
         "ultimo_precio": "26,0000",
         "monto_efectivo": "33.219,85",
@@ -8,7 +8,7 @@
         "titulos_negociados": "1268"
     },
     {
-        "nombre": "ARCA INM.VAL.\"B\"",
+        "nombre": "ARCA INM.VAL.B",
         "simbolo": "ARC.B",
         "ultimo_precio": "70,0000",
         "monto_efectivo": "195.886,5",
@@ -128,7 +128,7 @@
         "titulos_negociados": "4099"
     },
     {
-        "nombre": "MONTESCO  \"B\"",
+        "nombre": "MONTESCO  B",
         "simbolo": "MTC.B",
         "ultimo_precio": "35,0000",
         "monto_efectivo": "4900",
@@ -160,7 +160,7 @@
         "titulos_negociados": "448"
     },
     {
-        "nombre": "PIVCA CLASE \"B\"",
+        "nombre": "PIVCA CLASE B",
         "simbolo": "PIV.B",
         "ultimo_precio": "3119,9900",
         "monto_efectivo": "9319,99",
@@ -184,7 +184,7 @@
         "titulos_negociados": "1140"
     },
     {
-        "nombre": "R.S.TERESA \"B\"",
+        "nombre": "R.S.TERESA B",
         "simbolo": "RST.B",
         "ultimo_precio": "13,5000",
         "monto_efectivo": "57.825,4",

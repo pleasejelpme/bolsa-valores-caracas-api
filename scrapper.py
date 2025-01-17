@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 from const import url
-from utils import remove_dots
+from utils import remove_dots, remove_quotes
 import json
 import os
 
@@ -96,6 +96,7 @@ def get_stocks(soup: BeautifulSoup) -> list:
 
     i = 0 
     while i < len(data):
+        data[i] = remove_quotes(data[i])
         stock = dict(zip(keys, data[i:i+6]))
         cleaned_data.append(stock)
         i+=6        
