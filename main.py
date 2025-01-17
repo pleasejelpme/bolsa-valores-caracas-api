@@ -12,27 +12,29 @@ app = FastAPI(
 
 
 @app.get('/acciones', response_class=JSONResponse)
-async def get_acciones_list() -> list[BasicStock]:
+def get_acciones_list() -> list[BasicStock]:
     """
     Retorna una lista de acciones cotizadas en la Bolsa de Valores de Caracas,
     obtenida de la pagina web de la Bolsa de Valores de Caracas.
     """
-    file = open('json/stocks.json')
-    return json.load(file)
+    with open('json/stocks.json') as file:
+        acciones = json.load(file)
+        return [BasicStock(**accion) for accion in acciones]
 
 
 @app.get('/renta-variable', response_class=JSONResponse)
-async def get_renta_variable() -> RentaVariable:
+def get_renta_variable() -> RentaVariable:
     """
     Retorna informacion de la tabla "renta variable"
     obtenida de la pagina web de la Bolsa de Valores de Caracas.
     """
-    file = open('json/renta_variable.json')
-    return json.load(file)
+    with open('json/renta_variable.json') as file:
+        renta_variable = json.load(file)
+        return RentaVariable(**renta_variable[0])
 
 
 @app.get('/acciones/{cod_simbolo}', response_class=JSONResponse)
-async def get_accion_detalle(cod_simbolo: str) -> StockDetail:
+def get_accion_detalle(cod_simbolo: str) -> StockDetail:
     """
     Dado el codigo de la accion a consultar, retorna informacion detallada de la accion.
 
@@ -66,10 +68,13 @@ async def get_accion_detalle(cod_simbolo: str) -> StockDetail:
     """
 
     cod_simbolo = cod_simbolo.upper()
-    file = open('json/stocks_details.json')
-    data = json.load(file)
-    for stock in data:
-        if stock['cod_simbolo'] == cod_simbolo:
-            return stock
-    
-    return {'message': 'Stock not found'}
+    with open('json/stocks_details.json') as file:
+        data = json.load(file)
+        for stock in data:
+            if stock['cod_simbolo'] == cod_simbolo:
+                return StockDetail(**stock)
+
+    return JSONResponse(
+        status_code=404, 
+        content={'message': 'Codigo de accion no encontrado. Verifica que es uno de los codigos listados en la documentacion.'}
+        )
