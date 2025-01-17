@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse, Response
 from models import BasicStock, StockDetail, RentaVariable
 from pdf_builder import build_stocks_table
+from datetime import datetime
 import json
 
 
@@ -92,4 +93,7 @@ def get_acciones_list_pdf() -> Response:
     with open('json/stocks.json', 'r', encoding='utf-8') as file:
         acciones = json.load(file)
         acciones_pdf = build_stocks_table(acciones)
-        return Response(content=acciones_pdf, media_type='application/pdf', headers={'Content-Disposition': 'attachment; filename="acciones.pdf"'})
+        return Response(
+            content=acciones_pdf, 
+            media_type='application/pdf', 
+            headers={'Content-Disposition': f'attachment; filename="acciones bvc {datetime.now().strftime("%d-%m-%y")}.pdf"'})
