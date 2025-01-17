@@ -20,8 +20,14 @@ Para una instalacion manual:
 python -m venv .env 
 ```
 
-En windows ```.env\scripts\activate```
-En linux ```source .env/bin/activate```
+En windows 
+```
+.env\scripts\activate
+```
+En linux 
+```
+source .env/bin/activate
+```
 
 Luego, instalar dependencias con: 
 ```
