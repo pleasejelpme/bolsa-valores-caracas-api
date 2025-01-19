@@ -1,15 +1,32 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse, Response
 from models import BasicStock, StockDetail, RentaVariable
+from scrapper import scrape_and_save
 from pdf_builder import build_stocks_table
+from contextlib import asynccontextmanager
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.cron import CronTrigger
 from datetime import datetime
 import json
 
+
+scheduler = BackgroundScheduler()
+trigger = CronTrigger(hour=16, minute=47, timezone='America/Caracas')
+trigger2 = CronTrigger(hour=17, minute=19, timezone='America/Caracas')
+scheduler.add_job(scrape_and_save, trigger)
+scheduler.add_job(scrape_and_save, trigger2)
+scheduler.start()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    yield
+    scheduler.shutdown()
 
 app = FastAPI(
     title='Bolsa de Valores de Caracas API',
     description='API que propociona informacion de acciones cotizadas en la Bolsa de Valores de Caracas',
     version='1.0.0',
+    lifespan=lifespan
 )
 
 
@@ -19,9 +36,12 @@ def get_acciones_list() -> list[BasicStock]:
     Retorna una lista de acciones cotizadas en la Bolsa de Valores de Caracas,
     obtenida de la pagina web de la Bolsa de Valores de Caracas.
     """
-    with open('json/stocks.json') as file:
-        acciones = json.load(file)
-        return [BasicStock(**accion) for accion in acciones]
+    try:
+        with open('json/stocks.json') as file:
+            acciones = json.load(file)
+            return [BasicStock(**accion) for accion in acciones]
+    except:
+        return Response(content='Error al obtener la informacion', status_code=500)
 
 
 @app.get('/renta-variable', response_class=JSONResponse)
@@ -30,10 +50,14 @@ def get_renta_variable() -> RentaVariable:
     Retorna informacion de la tabla "renta variable"
     obtenida de la pagina web de la Bolsa de Valores de Caracas.
     """
-    with open('json/renta_variable.json') as file:
-        renta_variable = json.load(file)
-        return RentaVariable(**renta_variable[0])
-
+    
+    try:
+        with open('json/renta_variable.json') as file:
+            renta_variable = json.load(file)
+            return RentaVariable(**renta_variable[0])
+    except:
+        return Response(content='Error al obtener la informacion', status_code=500)
+    
 
 @app.get('/acciones/{cod_simbolo}', response_class=JSONResponse)
 def get_accion_detalle(cod_simbolo: str) -> StockDetail:
@@ -70,16 +94,20 @@ def get_accion_detalle(cod_simbolo: str) -> StockDetail:
     """
 
     cod_simbolo = cod_simbolo.upper()
-    with open('json/stocks_details.json') as file:
-        data = json.load(file)
-        for stock in data:
-            if stock['cod_simbolo'] == cod_simbolo:
-                return StockDetail(**stock)
+    
+    try:
+        with open('json/stocks_details.json') as file:
+            data = json.load(file)
+            for stock in data:
+                if stock['cod_simbolo'] == cod_simbolo:
+                    return StockDetail(**stock)
 
-    return JSONResponse(
-        status_code=404, 
-        content={'message': 'Codigo de accion no encontrado. Verifica que es uno de los codigos listados en la documentacion.'}
-        )
+        return JSONResponse(
+            status_code=404, 
+            content={'message': 'Codigo de accion no encontrado. Verifica que es uno de los codigos listados en la documentacion.'}
+            )
+    except:
+        Response(content='Error al obtener la informacion', status_code=500)
 
 
 """
@@ -90,10 +118,17 @@ Possible aditional features:
 
 @app.get('/pdf-acciones', response_class=Response)
 def get_acciones_list_pdf() -> Response:
-    with open('json/stocks.json', 'r', encoding='utf-8') as file:
-        acciones = json.load(file)
-        acciones_pdf = build_stocks_table(acciones)
-        return Response(
-            content=acciones_pdf, 
-            media_type='application/pdf', 
-            headers={'Content-Disposition': f'attachment; filename="acciones bvc {datetime.now().strftime("%d-%m-%y")}.pdf"'})
+    """
+    Entrega la informacion conseguida en el endpoint **/acciones** en formato PDF.
+    """
+
+    try: 
+        with open('json/stocks.json', 'r', encoding='utf-8') as file:
+            acciones = json.load(file)
+            acciones_pdf = build_stocks_table(acciones)
+            return Response(
+                content=acciones_pdf, 
+                media_type='application/pdf', 
+                headers={'Content-Disposition': f'attachment; filename="acciones bvc {datetime.now().strftime("%d-%m-%y")}.pdf"'})
+    except:
+        return Response(content='Error al generar el PDF', status_code=500)

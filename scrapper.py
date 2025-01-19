@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 from const import url
 from utils import remove_dots, remove_quotes
+from datetime import datetime
 import json
 import os
 
@@ -136,7 +137,9 @@ def dump_json(filename: str, data: list) -> None:
         json.dump(data, f, indent=4)
 
 
-if __name__ == '__main__':
+def scrape_and_save():
+    print(f'scrapping ejecutado en {datetime.now()}')
+
     driver = setup_driver()
     soup = scrapp_page(driver)
     stocks = get_stocks(soup)
@@ -151,4 +154,9 @@ if __name__ == '__main__':
     dump_json(filename='renta_variable', data=renta_variable)
     dump_json(filename='stocks_details', data=stock_details)
     
+    os.chdir('..')
     driver.quit()
+
+
+if __name__ == '__main__':
+    scrape_and_save()

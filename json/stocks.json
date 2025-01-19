@@ -2,217 +2,225 @@
     {
         "nombre": "BCO. CARIBE A",
         "simbolo": "ABC.A",
-        "ultimo_precio": "26,0000",
-        "monto_efectivo": "33.219,85",
-        "variacion": "-2.9",
-        "titulos_negociados": "1268"
+        "ultimo_precio": "27,9900",
+        "monto_efectivo": "235.429,62",
+        "variacion": "1.99",
+        "titulos_negociados": "9383"
     },
     {
         "nombre": "ARCA INM.VAL.B",
         "simbolo": "ARC.B",
         "ultimo_precio": "70,0000",
-        "monto_efectivo": "195.886,5",
+        "monto_efectivo": "23.000",
         "variacion": "0",
-        "titulos_negociados": "2997"
+        "titulos_negociados": "338"
     },
     {
         "nombre": "BCO.NAC.CREDITO",
         "simbolo": "BNC",
-        "ultimo_precio": "47,9800",
-        "monto_efectivo": "58.373,89",
-        "variacion": "47.88",
-        "titulos_negociados": "1186"
+        "ultimo_precio": "41,0000",
+        "monto_efectivo": "141.122,42",
+        "variacion": "40.9",
+        "titulos_negociados": "3467"
     },
     {
         "nombre": "BCO. PROVINCIAL",
         "simbolo": "BPV",
-        "ultimo_precio": "8,8900",
-        "monto_efectivo": "634.532,58",
-        "variacion": "-0.11",
-        "titulos_negociados": "73.827"
+        "ultimo_precio": "8,8800",
+        "monto_efectivo": "248.698,37",
+        "variacion": "-0.01",
+        "titulos_negociados": "28.523"
     },
     {
         "nombre": "BOLSA V. CCAS.",
         "simbolo": "BVCC",
-        "ultimo_precio": "9,5900",
-        "monto_efectivo": "103.143,08",
-        "variacion": "-0.21",
-        "titulos_negociados": "11.356"
+        "ultimo_precio": "9,4500",
+        "monto_efectivo": "38.686,92",
+        "variacion": "-0.14",
+        "titulos_negociados": "4234"
     },
     {
         "nombre": "B.DE VENEZUELA",
         "simbolo": "BVL",
-        "ultimo_precio": "28,0000",
-        "monto_efectivo": "11.459",
-        "variacion": "0",
-        "titulos_negociados": "402"
+        "ultimo_precio": "29,0000",
+        "monto_efectivo": "53.190",
+        "variacion": "1",
+        "titulos_negociados": "1954"
     },
     {
         "nombre": "CR.CARABOBO",
         "simbolo": "CCR",
-        "ultimo_precio": "800,0000",
-        "monto_efectivo": "8000",
-        "variacion": "0",
-        "titulos_negociados": "10"
+        "ultimo_precio": "798,9700",
+        "monto_efectivo": "4793,88",
+        "variacion": "-1.03",
+        "titulos_negociados": "6"
     },
     {
         "nombre": "CORP.GPO.QUIM.",
         "simbolo": "CGQ",
-        "ultimo_precio": "16,4400",
-        "monto_efectivo": "230,16",
-        "variacion": "-0.06",
-        "titulos_negociados": "14"
+        "ultimo_precio": "16,0000",
+        "monto_efectivo": "5264",
+        "variacion": "-0.5",
+        "titulos_negociados": "329"
     },
     {
         "nombre": "CORIMON C.A.",
         "simbolo": "CRM.A",
         "ultimo_precio": "9,5000",
-        "monto_efectivo": "5835,7",
-        "variacion": "0.5",
-        "titulos_negociados": "617"
+        "monto_efectivo": "2498,5",
+        "variacion": "0",
+        "titulos_negociados": "263"
     },
     {
         "nombre": "DOMINGUEZ & CIA",
         "simbolo": "DOM",
         "ultimo_precio": "27,0000",
-        "monto_efectivo": "3456",
-        "variacion": "-0.33",
-        "titulos_negociados": "128"
+        "monto_efectivo": "2538",
+        "variacion": "0",
+        "titulos_negociados": "94"
     },
     {
         "nombre": "PRODUCTOS EFE",
         "simbolo": "EFE",
-        "ultimo_precio": "7,8000",
-        "monto_efectivo": "2347,8",
-        "variacion": "0",
-        "titulos_negociados": "301"
+        "ultimo_precio": "7,8300",
+        "monto_efectivo": "396.186,5",
+        "variacion": "0.03",
+        "titulos_negociados": "50.790"
     },
     {
         "nombre": "ENVASES VZLOS.",
         "simbolo": "ENV",
-        "ultimo_precio": "24,9900",
-        "monto_efectivo": "4298,38",
-        "variacion": "-0.01",
-        "titulos_negociados": "172"
+        "ultimo_precio": "24,0000",
+        "monto_efectivo": "180.072",
+        "variacion": "-0.99",
+        "titulos_negociados": "8087"
     },
     {
         "nombre": "G.MANTRA CLASE B",
         "simbolo": "GMC.B",
         "ultimo_precio": "350,0000",
-        "monto_efectivo": "1050",
+        "monto_efectivo": "1750",
         "variacion": "0",
-        "titulos_negociados": "3"
+        "titulos_negociados": "5"
+    },
+    {
+        "nombre": "GRUPO ZULIANO",
+        "simbolo": "GZL",
+        "ultimo_precio": "24,4900",
+        "monto_efectivo": "7224,55",
+        "variacion": "-1.01",
+        "titulos_negociados": "295"
+    },
+    {
+        "nombre": "I.CRECEPYMES -B-",
+        "simbolo": "ICP.B",
+        "ultimo_precio": "7,8000",
+        "monto_efectivo": "312",
+        "variacion": "0",
+        "titulos_negociados": "40"
     },
     {
         "nombre": "INM.VAL.Y CAP. A",
         "simbolo": "IVC.A",
-        "ultimo_precio": "58,5000",
-        "monto_efectivo": "5326,08",
-        "variacion": "-0.95",
-        "titulos_negociados": "92"
+        "ultimo_precio": "58,0000",
+        "monto_efectivo": "406",
+        "variacion": "0",
+        "titulos_negociados": "7"
     },
     {
         "nombre": "INM.VAL.Y CAP. B",
         "simbolo": "IVC.B",
-        "ultimo_precio": "26,0000",
-        "monto_efectivo": "19.971,37",
-        "variacion": "-0.76",
-        "titulos_negociados": "764"
+        "ultimo_precio": "27,9700",
+        "monto_efectivo": "3846,12",
+        "variacion": "1.97",
+        "titulos_negociados": "137"
     },
     {
         "nombre": "MANPA, C.A. SACA",
         "simbolo": "MPA",
         "ultimo_precio": "4,9000",
-        "monto_efectivo": "20.485,4",
-        "variacion": "-0.12",
-        "titulos_negociados": "4099"
-    },
-    {
-        "nombre": "MONTESCO  B",
-        "simbolo": "MTC.B",
-        "ultimo_precio": "35,0000",
-        "monto_efectivo": "4900",
-        "variacion": "0",
-        "titulos_negociados": "140"
+        "monto_efectivo": "2268,7",
+        "variacion": "-0.09",
+        "titulos_negociados": "463"
     },
     {
         "nombre": "MERCANTIL S.(A)",
         "simbolo": "MVZ.A",
         "ultimo_precio": "125,0000",
-        "monto_efectivo": "9100",
-        "variacion": "-19",
-        "titulos_negociados": "73"
+        "monto_efectivo": "292.829",
+        "variacion": "0",
+        "titulos_negociados": "2350"
     },
     {
         "nombre": "MERCANTIL S.(B)",
         "simbolo": "MVZ.B",
-        "ultimo_precio": "128,0000",
-        "monto_efectivo": "9176",
-        "variacion": "-2",
-        "titulos_negociados": "72"
+        "ultimo_precio": "125,0000",
+        "monto_efectivo": "1250",
+        "variacion": "-3",
+        "titulos_negociados": "10"
     },
     {
         "nombre": "PROAGRO",
         "simbolo": "PGR",
-        "ultimo_precio": "5,7900",
-        "monto_efectivo": "2613,62",
-        "variacion": "0",
-        "titulos_negociados": "448"
-    },
-    {
-        "nombre": "PIVCA CLASE B",
-        "simbolo": "PIV.B",
-        "ultimo_precio": "3119,9900",
-        "monto_efectivo": "9319,99",
-        "variacion": "19.99",
-        "titulos_negociados": "3"
+        "ultimo_precio": "5,7000",
+        "monto_efectivo": "9243,1",
+        "variacion": "-0.09",
+        "titulos_negociados": "1641"
     },
     {
         "nombre": "PROTINAL",
         "simbolo": "PTN",
-        "ultimo_precio": "8,0000",
-        "monto_efectivo": "99.038",
-        "variacion": "-0.5",
-        "titulos_negociados": "12.313"
+        "ultimo_precio": "9,3900",
+        "monto_efectivo": "6022,95",
+        "variacion": "1.39",
+        "titulos_negociados": "639"
     },
     {
         "nombre": "RON STA. TERESA",
         "simbolo": "RST",
-        "ultimo_precio": "15,8400",
-        "monto_efectivo": "18.097,39",
-        "variacion": "-0.64",
-        "titulos_negociados": "1140"
+        "ultimo_precio": "15,4700",
+        "monto_efectivo": "325.174",
+        "variacion": "-0.37",
+        "titulos_negociados": "20.971"
     },
     {
         "nombre": "R.S.TERESA B",
         "simbolo": "RST.B",
-        "ultimo_precio": "13,5000",
-        "monto_efectivo": "57.825,4",
-        "variacion": "0.7",
-        "titulos_negociados": "4317"
+        "ultimo_precio": "14,7500",
+        "monto_efectivo": "6978,36",
+        "variacion": "1.25",
+        "titulos_negociados": "470"
     },
     {
         "nombre": "SIVENSA, S.A.",
         "simbolo": "SVS",
         "ultimo_precio": "10,6800",
-        "monto_efectivo": "3204",
-        "variacion": "-0.04",
-        "titulos_negociados": "300"
+        "monto_efectivo": "373,8",
+        "variacion": "0",
+        "titulos_negociados": "35"
     },
     {
         "nombre": "CANTV CLASE (D)",
         "simbolo": "TDV.D",
         "ultimo_precio": "20,0000",
-        "monto_efectivo": "10.139,8",
-        "variacion": "1",
-        "titulos_negociados": "506"
+        "monto_efectivo": "19.220",
+        "variacion": "0",
+        "titulos_negociados": "961"
     },
     {
         "nombre": "T. PALO GRANDE",
         "simbolo": "TPG",
         "ultimo_precio": "2,0000",
-        "monto_efectivo": "3035",
+        "monto_efectivo": "8751,04",
         "variacion": "0.02",
-        "titulos_negociados": "1523"
+        "titulos_negociados": "4287"
+    },
+    {
+        "nombre": "VENEALTERNA  B",
+        "simbolo": "VNA.B",
+        "ultimo_precio": "58,0000",
+        "monto_efectivo": "5220",
+        "variacion": "0",
+        "titulos_negociados": "90"
     }
 ]
