@@ -5,7 +5,7 @@ Api desarrollada en FastAPI que proporciona datos de las acciones listadas en la
 
 ## 🛠 Tecnologias Utilizadas
 - [Python](https://www.python.org)
-- [FastApi](https://fastapi.tiangolo.com/)
+- [FastAPI](https://fastapi.tiangolo.com/)
 - [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/)
 - [Selenium](https://selenium-python.readthedocs.io/)
 - [Reportlab](https://www.reportlab.com/)
