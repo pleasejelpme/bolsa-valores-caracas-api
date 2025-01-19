@@ -7,8 +7,11 @@ from bs4 import BeautifulSoup
 from const import url
 from utils import remove_dots, remove_quotes
 from datetime import datetime
+from logger import logger
 import json
 import os
+
+logger = logger()
 
 
 def setup_driver() -> webdriver.Chrome:
@@ -17,6 +20,7 @@ def setup_driver() -> webdriver.Chrome:
     """
 
     try: 
+        logger.info(f'Starting scrapping to {url}')
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
         driver = webdriver.Chrome(options=options)
@@ -24,6 +28,7 @@ def setup_driver() -> webdriver.Chrome:
         return driver
     except Exception as e:
         print(f'Error: {e}')
+        logger.warning(f'Error when trying to reach webpage in scrapper.py/setup_driver(): {e}')
         return None
 
 
@@ -137,7 +142,7 @@ def dump_json(filename: str, data: list) -> None:
         json.dump(data, f, indent=4)
 
 
-def scrape_and_save():
+def scrape_and_save() -> None:
     print(f'scrapping ejecutado en {datetime.now()}')
 
     driver = setup_driver()

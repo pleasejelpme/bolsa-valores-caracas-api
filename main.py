@@ -7,19 +7,24 @@ from contextlib import asynccontextmanager
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
 from datetime import datetime
+from logger import logger
 import json
 
 
 scheduler = BackgroundScheduler()
-trigger = CronTrigger(hour=16, minute=47, timezone='America/Caracas')
+trigger = CronTrigger(hour=10, minute=00, timezone='America/Caracas')
 trigger2 = CronTrigger(hour=17, minute=19, timezone='America/Caracas')
 scheduler.add_job(scrape_and_save, trigger)
 scheduler.add_job(scrape_and_save, trigger2)
 scheduler.start()
 
+logger = logger()
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    logger.info('Server up and running')
     yield
+    logger.info('Server shutting down')
     scheduler.shutdown()
 
 app = FastAPI(
